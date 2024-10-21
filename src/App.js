@@ -1,8 +1,28 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-function App() {
-  return <h1>Let us integrate map in react</h1>;
+const mapContainerStyle = {
+  width: '100%',
+  height: '400px',
+};
+
+const center = {
+  lat: ,
+  lng: ,
+};
+
+function MapComponent() {
+  return (
+    <LoadScript googleMapsApiKey="">
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={14}
+        center={center}
+      >
+        <Marker position={center} />
+      </GoogleMap>
+    </LoadScript>
+  );
 }
 
-export default App;
+export default MapComponent;
